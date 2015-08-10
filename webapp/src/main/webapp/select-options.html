@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="resources/js/jquery-1.11.1.min.js"></script>
+    <script src="resources/js/main.js"></script>
+
+    <link rel="stylesheet" href="resources/jquery-ui-1.11.4.custom/jquery-ui.css">
+    <script src="resources/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+
+    <script src="resources/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/css/jquery.dataTables.css">
+
+    <style>
+        fieldset {
+            border: 0;
+        }
+        label {
+            display: block;
+            margin: 30px 0 0 0;
+        }
+        select {
+            width: 200px;
+        }
+        .overflow {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Beer Selection Page</h1>
+Select beer characteristics
+
+<div id="selectColor">
+    <p>
+        Color:
+        <select name="color" size="1">
+            <option>light
+            <option>amber
+            <option>brown
+            <option>dark
+        </select>
+        <br><br>
+</div>
+
+<div id="selectPrice">
+    <p>
+        Price:
+        <select name="price" size="1">
+            <option value="TO_FIVE">to $5
+            <option value="FROM_FIVE_TO_TEN">from $5 to $10
+            <option value="FROM_TEN_TO_FIFTEEN">from $10 to $15
+            <option value="FROM_FIFTEEN_TO_TWENTY">from $15 to $20
+        </select>
+        <br><br>
+</div>
+<button id="getAdviseBtn" onclick="getAdvise()">Get advise</button>
+
+<div id="dialog" title="Basic dialog">
+    <table id="brands" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+</body>
+</html>
