@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Created by Alexander Beliansky.
@@ -25,7 +25,7 @@ public class BeerBrandsSelectController {
 
     @RequestMapping(value = "brands", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
-    public List<BeerBrand> getBrands(@RequestBody UIBeerParameters uiBeerParameters) {
+    public Collection<BeerBrand> getBrands(@RequestBody UIBeerParameters uiBeerParameters) {
         BeerParameters beerParameters = new BeerParameters();
         beerParameters.setColor(Color.valueOf(uiBeerParameters.getColor().toUpperCase()));
         beerParameters.setPrice(Price.valueOf(uiBeerParameters.getPrice().toUpperCase()));

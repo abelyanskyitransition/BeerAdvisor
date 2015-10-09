@@ -6,7 +6,7 @@ import com.belyanskiyas.study.repository.BeerBrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Created by Alexander Beliansky.
@@ -17,7 +17,7 @@ public class BeerExpert {
     @Autowired
     public BeerBrandRepository beerBrandRepository;
 
-    public List<BeerBrand> getBrands(BeerParameters parameters) {
+    public Collection<BeerBrand> getBrands(BeerParameters parameters) {
         return beerBrandRepository.getBrands(parameters);
     }
 }
