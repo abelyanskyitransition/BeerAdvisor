@@ -28,11 +28,9 @@ public class BeerBrandRepository {
     public List<BeerBrand> getBrands(BeerParameters parameters) {
         List<BeerBrand> result = new ArrayList<>(this.brands.size());
 
-        for (BeerBrand brand : brands) {
-            if (parameters.getColor().equals(brand.getColor()) && parameters.getPrice().equals(brand.getPrice())) {
-                result.add(new BeerBrand(brand));
-            }
-        }
+        brands.stream().filter(brand -> parameters.getColor().equals(brand.getColor())
+                                        && parameters.getPrice().equals(brand.getPrice()))
+                .forEach(brand -> result.add(new BeerBrand(brand)));
 
         return result;
     }
